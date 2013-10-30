@@ -1,0 +1,166 @@
+
+@mixin skew($deg) {
+  -webkit-transform: skewX($deg);
+  -moz-transform: skewX($deg);
+  -ms-transform: skewX($deg);
+  -o-transform: skewX($deg);
+  transform: skewX($deg);
+}
+@mixin cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin bordertop($b) {
+  -webkit-border-radius: $b;
+  -webkit-border-radius: $b;
+  -moz-border-radius: $b;
+  -moz-border-radius: $b;
+  border-radius: $b;
+  border-radius: $b;
+}
+
+@mixin shadow($s) {
+  -moz-box-shadow:    $s;
+  -webkit-box-shadow: $s;
+  box-shadow:         $s;
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@font-face {
+  font-family: 'pt_sans_captionregular';
+  src: url('PTC55F-webfont.eot');
+  src: url('PTC55F-webfont.eot?#iefix') format('embedded-opentype'),
+  url('PTC55F-webfont.woff') format('woff'),
+  url('PTC55F-webfont.ttf') format('truetype'),
+  url('PTC55F-webfont.svg#pt_sans_captionregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2 {
+  font: normal 1.0em/1 'pt_sans_captionregular', Arial, sans-serif;
+}
+h1 {
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  border-bottom: 3px solid rgba(255,255,255,0.6);
+  padding: 10px 0;
+  margin: 0 0 10px 0;
+  @media screen and (max-width: 700px) {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #7A4A29;
+}
+
+a {
+  text-decoration: none;
+  color: #C75001;
+}
+
+html {
+  background: url(../images/sunset.jpg) no-repeat center center fixed;
+  @include cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  @include clearfix;
+  margin: 50px auto 30px auto;
+  @media screen and (min-width: 1020px) {
+    width: 1010px;
+  }
+  @media screen and (max-width: 1020px) {
+    width: 700px;
+  }
+  @media screen and (max-width: 700px) {
+    margin: 20px auto 10px auto;
+    width: 300px;
+  }
+}
+
+section {
+  background-color: rgba(255,255,255,0.5);
+  @include bordertop(10px);
+  margin: 20px;
+  padding: 10px;
+  width: 275px;
+  float: left;
+  height: 10em;
+  line-height: 1.6em;
+  p {
+    font-size: 0.9em;
+  }
+  h2 {
+    margin-top: 0.4em;
+  }
+  @media screen and (max-width: 700px) {
+    width: 260px;
+    margin: 10px;
+  }
+}
+
+section:last-child {
+  @media screen and (max-width: 1020px) and (min-width: 701px) {
+    width: 610px;
+    height: auto;
+  }
+}
+
+.links {
+  text-align: right;
+  width: 97%;
+  @include skew(-10deg);
+  ul {
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    li {
+      display: inline;
+      text-transform: lowercase;
+      padding: 8px;
+      background: rgba(0,0,0,0.6);
+    }
+    a {
+      color: #c0c0c0;
+    }
+  }
+}
+
+#banner {
+  height: 200px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 165px;
+  background: url(../images/logo.png) no-repeat center center;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8em;
+}
