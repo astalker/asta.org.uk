@@ -142,7 +142,10 @@ footer {
   height: 165px;
   background: url(../images/logo.png) no-repeat center center; }
 
-.more {
+.pull-left {
+  float: left; }
+
+.pull-right {
   float: right; }
 
 /*# sourceMappingURL=styles.css.map */

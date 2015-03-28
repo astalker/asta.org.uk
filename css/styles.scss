@@ -187,6 +187,9 @@ footer {
   background: url(../images/logo.png) no-repeat center center;
 }
 
-.more {
+.pull-left {
+  float: left;
+}
+.pull-right {
   float: right;
 }
